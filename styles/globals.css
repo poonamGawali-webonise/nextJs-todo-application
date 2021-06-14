@@ -161,3 +161,7 @@ button {
 button:hover {
   opacity:1;
 }
+
+.link {
+  margin-left: 900px;
+}

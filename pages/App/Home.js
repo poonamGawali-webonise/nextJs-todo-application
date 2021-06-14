@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react';
 import { FormInput } from '../../components/shared/formElements';
+import Link from 'next/link'
 import { required } from '../../utility/validation-rules';
 
 export default function Home() {
@@ -34,7 +35,17 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="header">Todo App</div>
+      <div className="header">Todo App <br />
+        <span className="link">
+          <Link href="/about">
+            <a>About Us</a>
+          </Link>
+          &nbsp; &nbsp;
+          <Link href="/account">
+            <a>Account</a>
+          </Link>
+        </span>
+      </div>
         <div className="addNotes">
           <FormInput
             type="text"
