@@ -36,8 +36,8 @@ export function FormInput({
         element.classList.remove('errorActive');
       }
     } else {
-      // element.classList.add('errorActive');
-      // setErrorText(`Please Enter a ${inputName}`);
+      element.classList.add('errorActive');
+      setErrorText(`Please Enter a ${inputName}`);
     }
   }
 

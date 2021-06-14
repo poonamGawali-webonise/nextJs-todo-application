@@ -1,4 +1,4 @@
-import App from "./App/Home";
+import App from 'components/homePage/Home';
 
 export default function Index() {
   return (

@@ -1,11 +1,9 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import { FormInput } from '../../components/shared/formElements';
-import Link from 'next/link'
-import { required } from '../../utility/validation-rules';
+import { FormInput } from 'components/shared/formElements';
 
 export default function Home() {
-
   const [note, setNote] = useState('');
   const [notes, setNotesArray] = useState([]);
 
@@ -46,33 +44,32 @@ export default function Home() {
           </Link>
         </span>
       </div>
-        <div className="addNotes">
-          <FormInput
-            type="text"
-            inputRef={noteElement}
-            inputClassNames="input"
-            placeholder="Enter new note"
-            inputValue={note}
-            inputName="New Note"
-            onChange={onNoteChange}
-            // validationRules={[required]}
-          />
-          <div className="button" onClick={addNote}>+</div>
-          <br />
-          <ul>
-            {notes && notes.map(( note, index) => {
-              return (
-                <li key={index} className="note">
-                  <span>
-                    { note }
-                  </span>
-                  <button className="deletebtn" onClick={() => deleteNote(index)}>Delete</button>
-                </li>
-              )
-              })
-            }
-          </ul>
-        </div>
+      <div className="addNotes">
+        <FormInput
+          type="text"
+          inputRef={noteElement}
+          inputClassNames="input"
+          placeholder="Enter new note"
+          inputValue={note}
+          inputName="New Note"
+          onChange={onNoteChange}
+        />
+        <div className="button" onClick={addNote}>+</div>
+        <br />
+        <ul>
+          {notes && notes.map(( note, index) => {
+            return (
+              <li key={index} className="note">
+                <span>
+                  { note }
+                </span>
+                <button className="deletebtn" onClick={() => deleteNote(index)}>Delete</button>
+              </li>
+            )
+            })
+          }
+        </ul>
+      </div>
       <footer className="footer">
         Powered by{' '}
         <Image
